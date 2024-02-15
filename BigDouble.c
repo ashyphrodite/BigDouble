@@ -360,7 +360,6 @@ static void BD_power_internal(BigDouble *self, double power) {
             ? -result.mantissa
             : result.mantissa;
         self->exponent = result.exponent;
-        BD_normalize(self);
     }
 }
 
@@ -374,7 +373,6 @@ void BD_pow_double(BigDouble *self, double power) {
             BigDouble result = BD_Pow10_double(power);
             self->mantissa = result.mantissa;
             self->exponent = result.exponent;
-            BD_normalize(self);
         } else {
             BD_power_internal(self, power);
         }
