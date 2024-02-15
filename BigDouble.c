@@ -1,18 +1,4 @@
-#ifndef BIG_DOUBLE_H
-#define BIG_DOUBLE_H
-
-#include <float.h>
-#include <limits.h>
-#include <math.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include <stdlib.h>
-
-struct bigdouble_s {
-    double mantissa;
-    int64_t exponent;
-};
-typedef struct bigdouble_s BigDouble;
+#include "BigDouble.h"
 
 static const int8_t MAX_SIGNIFICANT_DIGITS  = 17;
 static const int64_t EXPONENT_LIMIT         = INT64_MAX;
@@ -475,5 +461,3 @@ BigDouble BD_ArrayProduct(BigDouble *array, size_t size) {
     }
     return result;
 }
-
-#endif
